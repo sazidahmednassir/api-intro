@@ -20,3 +20,21 @@ function displayPosts(posts){
     }
 
 }
+
+addpost()
+
+function addpost(){
+    fetch('https://jsonplaceholder.typicode.com/posts' , {
+        method: 'POST',
+        body : JSON.stringify({
+            title: 'hello sazid',
+            body: 'this is my post',
+            userId: 2
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+    })
+    .then(res=> res.json())
+    .then(data => console.log(data))
+}
